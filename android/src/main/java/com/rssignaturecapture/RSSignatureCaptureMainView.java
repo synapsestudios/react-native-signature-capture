@@ -28,6 +28,7 @@ import android.widget.LinearLayout;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import java.lang.Boolean;
+import java.util.UUID;
 
 public class RSSignatureCaptureMainView extends LinearLayout implements OnClickListener,RSSignatureCaptureView.SignatureCallback {
   LinearLayout buttonsLayout;
@@ -151,10 +152,13 @@ public class RSSignatureCaptureMainView extends LinearLayout implements OnClickL
 
     // set the file name of your choice
     String fname = "signature.png";
+    // generate a random file name
+    // String fname = UUID.randomUUID().toString() + ".png";
 
     // in our case, we delete the previous file, you can remove this
     File file = new File(myDir, fname);
-    if (file.exists()) {
+    // if (file.exists()) {
+    if (file.exists() || file.getAbsoluteFile().exists()) {
       file.delete();
     }
 
