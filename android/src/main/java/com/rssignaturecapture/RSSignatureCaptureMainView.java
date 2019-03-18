@@ -151,14 +151,13 @@ public class RSSignatureCaptureMainView extends LinearLayout implements OnClickL
     }
 
     // set the file name of your choice
-    String fname = "signature.png";
+    // String fname = "signature.png";
     // generate a random file name
-    // String fname = UUID.randomUUID().toString() + ".png";
+    String fname = UUID.randomUUID().toString() + ".png";
 
     // in our case, we delete the previous file, you can remove this
     File file = new File(myDir, fname);
-    // if (file.exists()) {
-    if (file.exists() || file.getAbsoluteFile().exists()) {
+    if (file.exists()) {
       file.delete();
     }
 
