@@ -171,7 +171,7 @@ public class RSSignatureCaptureMainView extends LinearLayout implements OnClickL
       FileOutputStream out = new FileOutputStream(file);
       this.signatureView.getSignature().compress(Bitmap.CompressFormat.PNG, 90, out);
       out.flush();
-      out.close()
+      out.close();
 
 
       ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
